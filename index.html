@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#20aa9e">
+  <meta name="description" content="HealthAI provides health information, symptom guidance and wellness tools.">
+  <title>HealthAI — Your Health Companion</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="#home" class="brand">
+      <span class="brand-icon">♡</span>
+      <span>Health<span class="brand-ai">AI</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#symptoms">Symptom Checker</a>
+      <a href="#chat">AI Assistant</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="language-btn" id="languageToggle" type="button">EN / हिंदी</button>
+      <a class="login-btn" href="#chat">Get Started</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow"><span>✦</span> AI-POWERED HEALTHCARE</div>
+        <h1>Your Health,<br><span>Our Priority.</span></h1>
+        <p class="hero-description">
+          Get easy-to-understand health information, explore your symptoms,
+          and build healthier habits — all in one place.
+        </p>
+        <div class="hero-buttons">
+          <a href="#chat" class="primary-btn">Start Chat <span>→</span></a>
+          <a href="#services" class="secondary-btn">Explore Services</a>
+        </div>
+        <div class="trust-note"><span class="status-dot"></span> Your wellness journey starts here</div>
+      </div>
+
+      <div class="chat-card" id="chat">
+        <div class="chat-header">
+          <div class="bot-avatar">✿</div>
+          <div>
+            <strong>HealthAI Assistant</strong>
+            <div class="online-status"><span></span> Online demo</div>
+          </div>
+          <div class="header-dots">•••</div>
+        </div>
+
+        <div class="chat-messages" id="chatBox" aria-live="polite">
+          <div class="message bot-message">
+            <span class="mini-avatar">✿</span>
+            <div>
+              <strong>Namaste! 👋</strong>
+              <p>I'm HealthAI, your health information assistant. You can ask about general wellness, symptoms, sleep, or healthy habits.</p>
+            </div>
+          </div>
+          <div class="quick-prompts">
+            <button type="button" data-prompt="How can I improve my sleep?">😴 Better sleep</button>
+            <button type="button" data-prompt="How can I stay hydrated?">💧 Hydration</button>
+            <button type="button" data-prompt="How can I build healthy habits?">🌿 Healthy habits</button>
+          </div>
+        </div>
+
+        <form class="chat-input-area" id="chatForm">
+          <label class="sr-only" for="userInput">Ask HealthAI</label>
+          <input id="userInput" type="text" placeholder="Ask HealthAI about your wellness..." maxlength="1000" autocomplete="off">
+          <button type="submit" class="send-btn" aria-label="Send message">➤</button>
+        </form>
+        <p class="chat-footnote">Demo mode · Not a substitute for professional medical advice</p>
+      </div>
+    </section>
+
+    <section class="stats-strip">
+      <div><span class="stat-icon">♡</span><strong>Health first</strong><small>Wellness-focused tools</small></div>
+      <div><span class="stat-icon">✦</span><strong>Easy to use</strong><small>Simple health information</small></div>
+      <div><span class="stat-icon">⌘</span><strong>One platform</strong><small>Helpful tools in one place</small></div>
+    </section>
+
+    <section class="services section" id="services">
+      <div class="section-heading">
+        <span class="eyebrow">YOUR WELLNESS TOOLKIT</span>
+        <h2>Explore Our Services</h2>
+        <p>Simple tools to help you understand and manage your wellness.</p>
+      </div>
+
+      <div class="service-grid">
+        <a class="service-card" href="#chat">
+          <div class="service-icon icon-blue">☏</div>
+          <h3>AI Health Assistant</h3>
+          <p>Ask general health and wellness questions in simple language.</p>
+          <span class="card-link">Chat now <span>→</span></span>
+        </a>
+        <a class="service-card" href="#symptoms">
+          <div class="service-icon icon-green">✚</div>
+          <h3>Symptom Checker</h3>
+          <p>Explore general information about selected symptoms.</p>
+          <span class="card-link">Check symptoms <span>→</span></span>
+        </a>
+        <a class="service-card" href="#bmi">
+          <div class="service-icon icon-purple">⌁</div>
+          <h3>BMI Calculator</h3>
+          <p>Calculate BMI using height and weight.</p>
+          <span class="card-link">Calculate BMI <span>→</span></span>
+        </a>
+        <a class="service-card" href="#wellness">
+          <div class="service-icon icon-orange">♡</div>
+          <h3>Daily Wellness</h3>
+          <p>Explore simple tips for sleep, hydration and daily habits.</p>
+          <span class="card-link">Explore tips <span>→</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="tools-section" id="symptoms">
+      <div class="section split-layout">
+        <div class="tool-intro">
+          <span class="eyebrow">UNDERSTAND YOUR SYMPTOMS</span>
+          <h2>Let's talk about<br><span>how you feel.</span></h2>
+          <p>Select your symptoms to read general health information. This tool cannot diagnose an illness.</p>
+          <div class="info-note">ⓘ If symptoms are severe, sudden or getting worse, seek medical care rather than relying on this tool.</div>
+        </div>
+
+        <form class="tool-card" id="symptomForm">
+          <h3>Symptom Checker</h3>
+          <p class="form-description">Choose any symptoms that apply.</p>
+
+          <div class="symptom-options">
+            <label class="symptom-option"><input type="checkbox" name="symptom" value="Fever"><span>🌡️ Fever</span></label>
+            <label class="symptom-option"><input type="checkbox" name="symptom" value="Cough"><span>😷 Cough</span></label>
+            <label class="symptom-option"><input type="checkbox" name="symptom" value="Headache"><span>🤕 Headache</span></label>
+            <label class="symptom-option"><input type="checkbox" name="symptom" value="Stomach pain"><span>🌿 Stomach pain</span></label>
+            <label class="symptom-option"><input type="checkbox" name="symptom" value="Fatigue"><span>😴 Fatigue</span></label>
+          </div>
+
+          <button class="primary-btn full-btn" type="submit">Explore Information →</button>
+          <div id="symptomResult" class="result-box" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section bmi-section" id="bmi">
+      <div class="section-heading">
+        <span class="eyebrow">KNOW YOUR NUMBERS</span>
+        <h2>BMI Calculator</h2>
+        <p>Calculate Body Mass Index from your height and weight.</p>
+      </div>
+
+      <form class="tool-card bmi-card" id="bmiForm">
+        <div class="field-grid">
+          <div class="field">
+            <label for="weight">Weight (kg)</label>
+            <input id="weight" type="number" min="1" max="500" step="0.1" placeholder="e.g. 60" required>
+          </div>
+          <div class="field">
+            <label for="height">Height (cm)</label>
+            <input id="height" type="number" min="30" max="250" step="0.1" placeholder="e.g. 165" required>
+          </div>
+        </div>
+        <button class="primary-btn full-btn" type="submit">Calculate BMI →</button>
+        <div id="bmiResult" class="result-box" aria-live="polite"></div>
+        <p class="small-note">BMI is a screening measure, not a diagnosis. For people under 20, BMI must be interpreted using age- and sex-specific growth charts by a qualified professional.</p>
+      </form>
+    </section>
+
+    <section class="wellness-section" id="wellness">
+      <div class="section">
+        <div class="section-heading">
+          <span class="eyebrow">SMALL STEPS, BETTER HABITS</span>
+          <h2>Your Daily Wellness Corner</h2>
+          <p>Simple reminders for everyday wellbeing.</p>
+        </div>
+        <div class="wellness-grid">
+          <article class="wellness-card"><span>💧</span><h3>Stay Hydrated</h3><p>Drink water regularly throughout the day, guided by thirst and your activity.</p></article>
+          <article class="wellness-card"><span>🌙</span><h3>Rest Well</h3><p>Keep a regular sleep schedule and create a calm bedtime routine.</p></article>
+          <article class="wellness-card"><span>🚶</span><h3>Keep Moving</h3><p>Choose enjoyable movement and take breaks from sitting when you can.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div>
+        <span class="eyebrow">YOUR WELLNESS JOURNEY</span>
+        <h2>One small step can make a difference.</h2>
+        <p>Explore the tools and learn more about everyday health.</p>
+      </div>
+      <a href="#chat" class="primary-btn">Talk to HealthAI →</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="brand footer-brand"><span class="brand-icon">♡</span> Health<span class="brand-ai">AI</span></a>
+    <p>Helpful health information, designed with care.</p>
+    <p class="disclaimer">HealthAI is an educational demo, not a medical diagnostic service. For personal medical advice, contact a qualified healthcare professional.</p>
+    <p class="credit">Powered by Arpit Yadav</p>
+    <p class="copyright">© <span id="currentYear"></span> HealthAI. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="symptoms.html">Symptom Checker</a>
+  <a href="bmi.html">BMI Calculator</a>
+  <a href="chat.html">AI Assistant</a>
+</nav>
